@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'user/index'
   get 'user/show'
   post 'user', to: 'user#create'
+  post 'login', to: 'user#login'
   get 'user/create'
   get 'user/udpdate'
   get 'user/destroy'
