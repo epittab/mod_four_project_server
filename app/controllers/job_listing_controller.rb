@@ -3,6 +3,8 @@ class JobListingController < ApplicationController
   before_action :authorize_request
 
   def index
+    
+    render json: JobListing.all
   end
 
   def show
