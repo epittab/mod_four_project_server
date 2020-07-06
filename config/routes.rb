@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'job_listing/index'
   get 'job_listing/show'
   get 'job_listing/update'
-  get 'job_listing/create'
+  post 'listing', to: 'job_listing#create'
   get 'job_listing/destroy'
   get 'search', to: 'search#api'
   get 'user/index'
