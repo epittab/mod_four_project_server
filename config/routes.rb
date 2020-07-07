@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'listing', to: 'job_listing#index'
   post 'listing', to: 'job_listing#create'
+
+  post 'tag', to: "tag#create"
   
   get 'search', to: 'search#api'
   get 'user/index'
