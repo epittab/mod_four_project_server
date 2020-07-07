@@ -14,7 +14,7 @@ class JobListingController < ApplicationController
   end
 
   def create
-    @listing = JobListing.new(research_id: 1, 
+    @listing = JobListing.new(user_id: @current_user.id, 
                             job_salary: params[:listing][:salary_is_predicted],
                             job_title: params[:listing][:title],
                             company: params[:listing][:company][:display_name],
