@@ -10,10 +10,6 @@ Rails.application.routes.draw do
   get 'user/create'
   get 'user/udpdate'
   get 'user/destroy'
-  get 'research/index'
-  get 'research/show'
-  get 'research/create'
-  get 'research/update'
-  get 'research/destroy'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

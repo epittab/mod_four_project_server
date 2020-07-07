@@ -1,3 +1,3 @@
 class JobListing < ApplicationRecord
-    belongs_to :research
+    belongs_to :user
 end

@@ -3,7 +3,8 @@ class User < ApplicationRecord
 
     validates :username, presence: true, uniqueness: true
 
-    has_many :researches
+    has_many :job_listings
+    has_many :user_tags
 
     def self.check_user(credentials)
         @user = self.find_by(username: credentials[:username]).try(:authenticate, credentials[:password])

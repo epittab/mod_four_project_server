@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_06_170738) do
+ActiveRecord::Schema.define(version: 2020_07_07_190140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,16 +27,18 @@ ActiveRecord::Schema.define(version: 2020_07_06_170738) do
     t.decimal "longitude", precision: 10, scale: 6
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "research_id"
+    t.integer "user_id"
   end
 
-  create_table "researches", force: :cascade do |t|
+  create_table "tags", force: :cascade do |t|
+    t.string "tag_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_tags", force: :cascade do |t|
     t.integer "user_id"
-    t.string "job_title"
-    t.string "city"
-    t.string "created_in"
-    t.string "query"
-    t.integer "total_results"
+    t.integer "tag_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
