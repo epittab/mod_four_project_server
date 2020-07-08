@@ -30,6 +30,8 @@ class TagController < ApplicationController
     end
     
     def destroy
+        user_tag = UserTag.find_by(user_id: @current_user, tag_id: params[:tag_id])
+        user_tag.destroy
     end
 
     private 
