@@ -4,7 +4,7 @@ class AuthController < ApplicationController
 
     def validate_token
 
-        render json: @current_user.id, status: :ok
+        render json: {user_id: @current_user.id}, status: :ok
     end
 
 

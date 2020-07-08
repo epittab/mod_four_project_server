@@ -13,7 +13,7 @@ class UserController < ApplicationController
     @user = User.new(first_name: params[:user][:first_name], last_name: params[:user][:last_name], username: params[:user][:username], password: params[:password])
     if @user.save
         token = User.encode(@user)
-        render json: {token: token}, status: :created 
+        render json: {token: token, user_id: @user.id}, status: :created 
         # render json: @user, status: :created
     else
         render json: { errors: @user.errors.full_messages },
@@ -34,7 +34,7 @@ end
     @user = User.check_user(creds)
     if (@user) 
       token = User.encode(@user)
-      render json: {token: token}, status: :ok
+      render json: {token: token, user_id: @user.id}, status: :ok
       # let user in => send back an encrypted token that will persist in the client
     else
       # keep user out // error messages "invalid username and/or password"
