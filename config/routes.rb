@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'tags', to: "tag#index"
   post 'tags', to: "tag#create"
-  delete 'tags', to: "tag#destory"
+  delete 'tags/:id', to: "tag#destroy"
   
   get 'search', to: 'search#api'
   get 'user/index'

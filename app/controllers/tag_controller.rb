@@ -4,7 +4,7 @@ class TagController < ApplicationController
 
     def index
         user_tags_array = @current_user.user_tags
-        tags_array = user_tags_array.map do |ut| Tag.find(ut.id) end
+        tags_array = user_tags_array.map do |ut| Tag.find(ut.tag_id) end
         render json: tags_array
     end
 
@@ -30,8 +30,9 @@ class TagController < ApplicationController
     end
     
     def destroy
-        user_tag = UserTag.find_by(user_id: @current_user, tag_id: params[:tag_id])
-        user_tag.destroy
+        user_tag = UserTag.find_by(user_id: @current_user.id, tag_id: params[:id].to_i)
+        deleted_tag = user_tag.destroy
+        render json: {deletedTag: deleted_tag}, status: :ok
     end
 
     private 
