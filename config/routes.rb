@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'listing', to: 'job_listing#index'
   post 'listing', to: 'job_listing#create'
   get 'auth', to: 'auth#validate_token'
-  post 'tag', to: "tag#create"
+
+  get 'tags', to: "tag#index"
+  post 'tags', to: "tag#create"
   
   get 'search', to: 'search#api'
   get 'user/index'
