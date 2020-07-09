@@ -3,8 +3,11 @@ class JobListingController < ApplicationController
   before_action :authorize_request
 
   def index
+
+        user_listings_array = @current_user.job_listings
+        
+        render json: user_listings_array
     
-    render json: JobListing.all
   end
 
   def show
