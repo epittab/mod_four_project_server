@@ -30,7 +30,7 @@ gem 'rack-cors'
 gem 'jwt'
 
 gem 'nokogiri'
-gem 'httparty'
+
 
 
 group :development, :test do
